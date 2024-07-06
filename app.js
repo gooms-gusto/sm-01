@@ -23,7 +23,9 @@ const app=Vue.createApp({
         return {
             courseGoalA: 'You are still rookies',
             courseGoalB: 'You are Master Vue',
-            vueLink:'google.com'
+            vueLink:'google.com',
+            counter:0,
+            name :''
         };
     },
 methods:{
@@ -34,8 +36,18 @@ methods:{
         }else {
             return this.courseGoalB;
         }
+    },
+    add(){
+
+        this.counter=this.counter+1;
+    },
+    reduce(){
+        this.counter=this.counter-1;
+    },
+    setName(event,lastname){
+        this.name=event.target.value + ' ' + lastname;
     }
 }
 });
 
-app.mount('#user-goal');
+app.mount('#events');
